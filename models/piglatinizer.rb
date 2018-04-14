@@ -7,8 +7,15 @@ class PigLatinizer
   end
 
   def piglatinize(word)
-    # text.split > convert to pig latin
-    word.upcase
+    vowels = %w{a e i o u}
+    word.gsub(/(\A|\s)\w+/) do |string|
+      string.strip!
+      while not vowels.include? str[0] or (str[0] == 'u' and str[-1] == 'q')
+        str += str[0]
+        str = str[1..-1]
+      end
+      str  = ' ' + str + 'ay'
+    end.strip
   end
 
 
