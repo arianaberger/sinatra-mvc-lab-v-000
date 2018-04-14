@@ -2,10 +2,10 @@ class PigLatinizer
 
   # attr_accessor :text
 
-  def initialize
-    # @text = text.downcase
-  end
-
+  # def initialize
+  #   # @text = text.downcase
+  # end
+  #
   def piglatinize(word)
     vowels = %w{a e i o u}
     word.gsub(/(\A|\s)\w+/) do |string|
@@ -17,7 +17,6 @@ class PigLatinizer
       str  = ' ' + str + 'ay'
     end.strip
   end
-end
 
 
 end
